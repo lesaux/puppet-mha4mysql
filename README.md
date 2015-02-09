@@ -47,6 +47,30 @@ gid of the group and ssh user
 ####Example usage:
 
 ```
+$masterha = {
+  'server default' => {
+    'user'      => 'root',
+    'password'  => 'password',
+    'ssh_user'  => 'mha4mysql',
+    'repl_user' => 'repl',
+    'repl_password' => 'password',
+    'master_binlog_dir' => '/mysql/logs',
+    'remote_workdir'    => '/mysql/masterha',
+    'secondary_check_script' => 'masterha_secondary_check -s remote_host1 -s remote_host2',
+    'ping_interval' => '3',
+    '#master_ip_failover_script' => '/opt/mha4mysql-manager-0.56/samples/scripts/master_ip_online_change',
+    'master_ip_online_change_script' => '/opt/mha4mysql-manager-0.56/samples/scripts/master_ip_online_change',
+    '#shutdown_script' => '/script/masterha/power_manager',
+    '#report_script' => '/script/masterha/send_master_failover_mail',
+  },
+  'server1'        => {
+    'hostname'  => '192.168.0.92',
+  },
+  'server2'        => {
+    'hostname'  => '192.168.0.93',
+  }
+}
+
 class {'mha4mysql':
   manager             => true,
   node                => true,
