@@ -2,6 +2,8 @@
 Install mha4mysql for manual master flip.
 Services aren't managed by this module yet.
 
+Debian OS Family only for now.
+
 ####Parameters
 
 [ manager ]
