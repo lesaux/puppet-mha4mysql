@@ -48,9 +48,15 @@ gid of the group and ssh user
 
 ```
 class {'mha4mysql':
+  manager             => true,
+  node                => true,
   manage_user_ssh     => true,
   manage_config       => true,
   fix_symlinks        => true,
+  mha4mysql_user      => mha4mysql,
+  mha4mysql_group     => mha4mysql,
+  mha4mysql_uid       => 700,
+  mha4mysql_gid       => 700,
   mysql_bindir        => '/opt/percona/bin',
  }
  ```
