@@ -50,6 +50,10 @@ group of the ssh user
 
 gid of the group and ssh user
 
+[ mysql_group ]
+
+Group that mha4mysql user should belong to (to read bin logs and such).
+
 [ config ]
 
 Configuration hash for the /etc/masterha_default.cnf file
@@ -70,7 +74,7 @@ class {'mha4mysql':
   mha4mysql_uid       => 700,
   mha4mysql_gid       => 700,
   mysql_bindir        => '/opt/percona/bin',
-  mysql_user          => mysql,
+  mysql_group          => mysql,
   config              => {
     'server default' => {
       'user'                            => 'root',
