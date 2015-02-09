@@ -1,5 +1,6 @@
 # puppet-mha4mysql
-Install mha4mysql
+Install mha4mysql for manual master flip.
+Services aren't managed by this module yet.
 
 ####Parameters
 
