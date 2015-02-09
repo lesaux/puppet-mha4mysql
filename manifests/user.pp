@@ -19,6 +19,7 @@ class mha4mysql::user {
       system               => true,
       uid                  => $mha4mysql::mha4mysql_uid,
       require              => Group['mha4mysql::mha4mysql_group'],
+      groups               => $mha4mysql::mysql_group,
     }
 
 
