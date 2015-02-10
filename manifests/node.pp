@@ -11,7 +11,7 @@ class mha4mysql::node (
 ) {
 
   if $mha4mysql::node {
-  ensure_packages ( ['libdbd-mysql-perl'])
+  ensure_packages ( ['libdbd-mysql-perl','build-essential'])
 
     archive { "mha4mysql-node-${mha4mysql::node::version}":
       ensure   => present,

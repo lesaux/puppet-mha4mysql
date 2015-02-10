@@ -11,8 +11,8 @@ class mha4mysql::manager (
 ) {
 
   if $mha4mysql::manager {
-  ensure_packages ( ['libdbd-mysql-perl', 'libconfig-tiny-perl', 'liblog-dispatch-perl', 'libparallel-forkmanager-perl']) 
-
+  ensure_packages ( ['libdbd-mysql-perl', 'libconfig-tiny-perl', 'liblog-dispatch-perl', 'libparallel-forkmanager-perl','build-essential']) 
+  
     archive { "mha4mysql-manager-${mha4mysql::manager::version}":
       ensure   => present,
       checksum => false,
